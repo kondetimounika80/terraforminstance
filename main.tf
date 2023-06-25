@@ -1,5 +1,5 @@
 resource "aws_instance" "ins" {
-  ami           = "ami-0557a15b87f6559cf"
+  ami           = "ami-0261755bbcb8c4a84"
   instance_type = "t2.micro"
   key_name = "jenkinstest"
 }
