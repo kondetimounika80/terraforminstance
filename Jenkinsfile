@@ -12,9 +12,9 @@ pipeline {
                 sh ('terraform init') 
             }
         }
-        stage('terraform-action ec2 instance') {
+        stage('terraform_action ec2 instance') {
             steps {
-                echo "Terraform-action is --> ${action}"
+                echo "Terraform action is --> ${action}"
                 sh ('terraform ${action} --auto-approve')
             }
         }
