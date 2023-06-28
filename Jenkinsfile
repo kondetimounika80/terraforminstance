@@ -4,15 +4,15 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/kondetimounika80/terraforminstance.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Akhil2598/teffaform-infra.git']]])
             }
         }
-        stage('init') {
+        stage('terraform-init') {
             steps {
                 sh ('terraform init') 
             }
         }
-        stage('terraform  action') {
+        stage('terraform-action to create a ec2 instance') {
             steps {
                 echo "Terraform action is --> ${action}"
                 sh ('terraform ${action} --auto-approve')
